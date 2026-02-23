@@ -834,6 +834,12 @@
                 padding: 0 0.75rem;
             }
             
+            /* Body background lebih terang untuk HP */
+            body {
+                background: #1e293b;
+                padding-bottom: 80px;
+            }
+            
             /* Navbar improvements - bottom fixed navigation */
             .navbar {
                 padding: 0;
@@ -842,9 +848,8 @@
                 top: auto;
                 left: 0;
                 right: 0;
-                background: rgba(15, 23, 42, 0.95);
-                backdrop-filter: blur(20px);
-                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                background: #0f172a;
+                border-top: 1px solid rgba(255, 255, 255, 0.15);
                 z-index: 1000;
             }
             
@@ -877,21 +882,21 @@
                 align-items: center;
                 gap: 0.3rem;
                 padding: 0.5rem 0.75rem;
-                font-size: 0.7rem;
+                font-size: 0.65rem;
                 border-radius: 12px;
                 background: transparent;
                 border: none;
-                color: #94a3b8;
+                color: #e2e8f0;
                 white-space: nowrap;
             }
             
             .nav-link i {
-                font-size: 1.25rem;
+                font-size: 1.2rem;
             }
             
             .nav-link:hover, .nav-link.active {
                 color: #fff;
-                background: rgba(99, 102, 241, 0.2);
+                background: #6366f1;
                 box-shadow: none;
             }
             
@@ -900,11 +905,7 @@
                 padding-bottom: 1rem;
             }
             
-            body {
-                padding-bottom: 80px;
-            }
-            
-            /* Hero section - more compact */
+            /* Hero section - lebih terang */
             .hero {
                 padding: 1rem 0.5rem 1.5rem;
                 margin-top: 0.5rem;
@@ -914,6 +915,8 @@
                 padding: 0.35rem 0.85rem;
                 font-size: 0.7rem;
                 margin-bottom: 0.75rem;
+                background: rgba(99, 102, 241, 0.2);
+                color: #a5b4fc;
             }
             
             .hero h2 {
@@ -921,6 +924,7 @@
                 line-height: 1.4;
                 margin-bottom: 0.6rem;
                 font-weight: 700;
+                color: #fff;
             }
             
             .hero p {
@@ -929,17 +933,20 @@
                 color: #cbd5e1;
             }
             
-            /* Section cards - more compact */
+            /* Section cards - background lebih terang */
             .section-card {
                 padding: 1rem;
                 margin-bottom: 1rem;
                 border-radius: 16px;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.15);
             }
             
             .section-title {
                 font-size: 1rem;
                 margin-bottom: 0.85rem;
                 padding-bottom: 0.6rem;
+                color: #fff;
             }
             
             .section-title i {
@@ -996,11 +1003,13 @@
             .layanan-item {
                 padding: 1rem 0.5rem;
                 border-radius: 14px;
+                background: rgba(255, 255, 255, 0.08);
             }
             
             .layanan-item i {
                 font-size: 1.6rem;
                 margin-bottom: 0.4rem;
+                color: #a5b4fc;
             }
             
             .layanan-item span {
@@ -1018,6 +1027,7 @@
                 border-radius: 14px;
                 gap: 0.6rem;
                 flex-wrap: wrap;
+                background: rgba(255, 255, 255, 0.08);
             }
             
             .pegawai-avatar {
@@ -1029,12 +1039,12 @@
             
             .pegawai-nama {
                 font-size: 0.9rem;
-                color: #f1f5f9;
+                color: #fff;
             }
             
             .pegawai-jabatan {
                 font-size: 0.75rem;
-                color: #94a3b8;
+                color: #cbd5e1;
             }
             
             .pegawai-badge {
@@ -1044,6 +1054,8 @@
                 text-align: center;
                 order: 3;
                 margin-top: 0.25rem;
+                background: rgba(99, 102, 241, 0.2);
+                color: #a5b4fc;
             }
             
             /* Sidebar info cards - improved readability */
@@ -1051,13 +1063,14 @@
                 padding: 1rem;
                 margin-bottom: 0.85rem;
                 border-radius: 14px;
-                background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.15);
             }
             
             .info-card h3 {
                 font-size: 0.95rem;
                 margin-bottom: 0.65rem;
-                color: #f1f5f9;
+                color: #fff;
             }
             
             .info-card h3 i {
@@ -1069,24 +1082,28 @@
             .info-card li {
                 padding: 0.45rem 0;
                 font-size: 0.85rem;
-                color: #cbd5e1;
+                color: #e2e8f0;
             }
             
             .info-card li i {
-                color: #818cf8;
+                color: #a5b4fc;
             }
             
             .statistik-angka {
                 font-size: 1.35rem;
+                color: #fff;
             }
             
             .map-placeholder {
                 height: 100px;
                 border-radius: 10px;
+                background: rgba(255, 255, 255, 0.08);
+                color: #cbd5e1;
             }
             
             .map-placeholder i {
                 font-size: 1.75rem;
+                color: #a5b4fc;
             }
             
             .map-placeholder span {
@@ -1114,6 +1131,7 @@
                 text-align: center;
                 gap: 0.75rem;
                 font-size: 0.85rem;
+                color: #cbd5e1;
             }
             
             .footer-links {
