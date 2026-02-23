@@ -1354,9 +1354,205 @@
         .aos-animate {
             pointer-events: auto;
         }
+
+        /* ===== WELCOME SCREEN ===== */
+        .welcome-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .welcome-overlay.hidden {
+            display: none;
+        }
+
+        .welcome-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            padding: 2.5rem;
+            text-align: center;
+            max-width: 90%;
+            width: 400px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.6s ease;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .welcome-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+        }
+
+        .welcome-card h2 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .welcome-card p {
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .welcome-input {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-size: 1rem;
+            font-family: 'Outfit', sans-serif;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .welcome-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+
+        .welcome-input::placeholder {
+            color: #64748b;
+        }
+
+        .welcome-btn {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 12px;
+            border: none;
+            background: var(--gradient-1);
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: 'Outfit', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .welcome-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Welcome Message Display */
+        .welcome-message {
+            display: none;
+        }
+
+        .welcome-message.show {
+            display: block;
+        }
+
+        .welcome-message h2 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .welcome-message p {
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+        }
+
+        .creator-name {
+            font-size: 0.85rem;
+            color: #64748b;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Mobile welcome screen adjustments */
+        @media (max-width: 768px) {
+            .welcome-card {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+
+            .welcome-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .welcome-card h2 {
+                font-size: 1.25rem;
+            }
+
+            .welcome-card p {
+                font-size: 0.85rem;
+            }
+
+            .welcome-input {
+                padding: 0.85rem 1rem;
+            }
+
+            .welcome-btn {
+                padding: 0.85rem;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Welcome Screen -->
+    <div class="welcome-overlay" id="welcomeScreen">
+        <div class="welcome-card">
+            <!-- Input Form -->
+            <div id="welcomeForm">
+                <div class="welcome-icon">
+                    <i class="fas fa-hand-sparkles"></i>
+                </div>
+                <h2>Selamat Datang!</h2>
+                <p>Masukkan nama Anda untuk memulai</p>
+                <input type="text" class="welcome-input" id="userNameInput" placeholder="Masukkan nama Anda..." autocomplete="off">
+                <button class="welcome-btn" onclick="showWelcomeMessage()">
+                    <i class="fas fa-arrow-right"></i> Masuk
+                </button>
+            </div>
+            
+            <!-- Welcome Message (hidden initially) -->
+            <div class="welcome-message" id="welcomeMessage">
+                <div class="welcome-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h2 id="welcomeText">Halo, Nama!</h2>
+                <p>Selamat datang di Website<br>Kantor Kecamatan Siberut Selatan</p>
+                <p style="margin-top: 1rem;">Kami siap melayani Anda dengan sepenuh hati! 😊</p>
+                <div class="creator-name">
+                    <i class="fas fa-code"></i> Dibuat oleh: <strong>Daffa Bintang Salimu</strong>
+                </div>
+                <button class="welcome-btn" onclick="enterWebsite()" style="margin-top: 1.5rem;">
+                    <i class="fas fa-home"></i> Lihat Website
+                </button>
+            </div>
+        </div>
+    </div>
     <!-- Animated Background -->
     <div class="bg-animation"></div>
     <div class="particles">
@@ -1897,6 +2093,40 @@
                 }, 100 + (index * 150));
             });
         })();
+
+        // Welcome Screen Functionality
+        function showWelcomeMessage() {
+            const userName = document.getElementById('userNameInput').value.trim();
+            
+            if (userName) {
+                localStorage.setItem('visitorName', userName);
+                document.getElementById('welcomeForm').style.display = 'none';
+                document.getElementById('welcomeMessage').classList.add('show');
+                document.getElementById('welcomeText').textContent = 'Halo, ' + userName + '!';
+            } else {
+                alert('Silakan masukkan nama Anda terlebih dahulu!');
+                document.getElementById('userNameInput').focus();
+            }
+        }
+
+        function enterWebsite() {
+            document.getElementById('welcomeScreen').classList.add('hidden');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedName = localStorage.getItem('visitorName');
+            if (savedName) {
+                document.getElementById('welcomeForm').style.display = 'none';
+                document.getElementById('welcomeMessage').classList.add('show');
+                document.getElementById('welcomeText').textContent = 'Halo, ' + savedName + '!';
+            }
+        });
+
+        document.getElementById('userNameInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                showWelcomeMessage();
+            }
+        });
     </script>
 </body>
 </html>
