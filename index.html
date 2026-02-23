@@ -955,43 +955,74 @@
                 font-size: 0.9rem;
             }
             
-            /* Slider improvements for touch */
+            /* Slider improvements for touch - make visible on mobile */
             .slider-container {
                 border-radius: 14px;
                 aspect-ratio: 16/11;
+                min-height: 180px;
+                background: linear-gradient(135deg, #6366f1 0%, #4c1d95 100%);
+                display: block;
+                visibility: visible;
+                opacity: 1;
+            }
+            
+            .slider-wrapper {
+                display: flex;
+                visibility: visible;
+                opacity: 1;
             }
             
             .slide {
                 padding: 1.25rem;
+                min-height: 180px;
+                visibility: visible;
+                opacity: 1;
             }
             
             .slide h3 {
                 font-size: 1.1rem;
                 margin-bottom: 0.4rem;
+                color: #fff;
             }
             
             .slide p {
                 font-size: 0.8rem;
+                color: #e2e8f0;
+            }
+            
+            .slide-content {
+                visibility: visible;
+                opacity: 1;
+                transform: translateY(0);
             }
             
             .slider-btn {
                 width: 36px;
                 height: 36px;
                 font-size: 0.9rem;
-                opacity: 0.85;
+                opacity: 0.7;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                visibility: visible;
             }
             
             .slider-dots {
                 margin-top: 0.6rem;
+                display: flex;
+                visibility: visible;
             }
             
             .dot {
                 width: 7px;
                 height: 7px;
+                visibility: visible;
+                background: rgba(255,255,255,0.5);
             }
             
             .dot.active {
                 width: 20px;
+                background: #fff;
             }
             
             /* Layanan grid - 2 columns evenly spaced */
